@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 #--*--encoding:utf8--*--
+# sudo python ftp_server.py
+#  python ftp_client.py
+# 127.0.1.1
+
 
 import os
 import signal
@@ -230,7 +234,7 @@ class FtpClient(QWidget):
     #---------------------------------------------------------------------------------#
     def downloadToRemoteFileList(self):
         """
-        download file and directory list from FTP Server
+        download file and directory list from FTP Server  //do servidor Remoto
         """
         self.remoteWordList = [ ]
         self.remoteDir      = { }
@@ -239,7 +243,7 @@ class FtpClient(QWidget):
 
     def loadToLocaFileList(self):
         """
-        load file and directory list from local computer
+        load file and directory list from local computer //do Computador
         """
         self.localWordList = [ ]
         self.localDir      = { }
@@ -248,6 +252,7 @@ class FtpClient(QWidget):
             self.addItemToLocalFileList(fileProperty(pathname))
         self.local.completerModel.setStringList(self.localWordList)
 
+    # adicionar ao Remoto#
     def addItemToRemoteFileList(self, content):
         mode, num, owner, group, size, date, filename = self.parseFileInfo(content)
         if content.startswith('d'):
@@ -270,8 +275,7 @@ class FtpClient(QWidget):
             self.remote.fileList.setEnabled(True)
 
 
-
-
+#adiconar ao PC#
     def addItemToLocalFileList(self, content):
         mode, num, owner, group, size, date, filename = self.parseFileInfo(content)
         if content.startswith('d'):
@@ -456,7 +460,7 @@ class FtpClient(QWidget):
         return self.remoteDir.get(dirname, None)
 
     def download(self):
-        global select_item
+
         item     = self.remote.fileList.currentItem( )
         filesize = int(item.text(1))
 
@@ -464,7 +468,7 @@ class FtpClient(QWidget):
             #p.agent_info = u' '.join((item.text(0))).encode('utf-8').strip
             src1 = u' '.join(item.text(0)).encode('utf-8').strip()
             srcfile = os.path.join(self.pwd, src1)
-            dst1=' '.join(select_item.text(0)).encode('utf-8').strip()
+            dst1=' '.join(item.text(0)).encode('utf-8').strip()
             dstfile  = os.path.join(self.local_pwd, dst1)
         except AttributeError:
             srcfile = os.path.join(self.pwd, src1)
@@ -488,14 +492,13 @@ class FtpClient(QWidget):
         fp.retrbinary(cmd='RETR '+srcfile, callback=callback)
 
     def upload(self): #upload tambem definir path
-        global select_item
         item     = self.local.fileList.currentItem( )
         filesize = int(item.text(1))
 
         try:
             srcUp1 = u' '.join(item.text(0)).encode('utf-8').strip()
             srcfile  = os.path.join(self.local_pwd, srcUp1)
-            dsUp1 = u' '.join(select_item.text(0)).encode('utf-8').strip()
+            dsUp1 = u' '.join(item.text(0)).encode('utf-8').strip()
             dstfile  = os.path.join(self.pwd, dsUp1)
         except AttributeError:
             srcfile  = os.path.join(self.local_pwd, srcUp1)
