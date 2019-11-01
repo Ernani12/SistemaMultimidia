@@ -2,12 +2,8 @@
 Sistema Donwload de Arquivos (midias) 
 
 
-Python 3.8
-PyQt5
-
-
-Systema  com classes implementadas de  ftp_server  // servdior
-ftp_client  // cliente
+Python 3.x ou mais
+Tkinter
 
 -Interface Pronta V
 -Ambas estao comunicando e buscando diretorio V  em 'home'
