@@ -22,15 +22,15 @@ Afazeres Seguindo a Reuniao em sala
 
 Windows:
 Plataforma padrão
-
-1-) para rodar é necessário instalar dependências no arquivo install_dependencies.py
+1-)  Extraia a pasta  Theme.rar  dentro da pasta do projeto definida
+2-) para rodar é necessário instalar dependências no arquivo install_dependencies.py
 python install_dependencies.py
 
-2-) Necessário ter python instalado 3x ou maior
+3-) Necessário ter python instalado 3x ou maior
 
-3-)Executar servdior no locas host 127.0.01 com Username root porta 1026
+4-)Executar servdior no locas host 127.0.01 com Username root porta 1026
 sem senha padrao
 
-4-) Antes de clicar na seta verde para entrar no diretório definido , defina o seu diretório no meu caso esta em "C:/Users/ernan/Downloads"
+5-) Antes de clicar na seta verde para entrar no diretório definido , defina o seu diretório no meu caso esta em "C:/Users/ernan/Downloads"
 
 Execute o cliente python Cliente.pyw
