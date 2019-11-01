@@ -16,3 +16,21 @@ Afazeres Seguindo a Reuniao em sala
 5) Testar 'home' local arquivos // Exibir Arquivos remotos V OBS: (pode ser mudado)
 6) Download File Midia Comparar //timestamp e atualizar  X
 7) Testar Outros 3 computadores // tem mesmo arquivo? X
+
+
+
+
+Windows:
+Plataforma padrão
+
+1-) para rodar é necessário instalar dependências no arquivo install_dependencies.py
+python install_dependencies.py
+
+2-) Necessário ter python instalado 3x ou maior
+
+3-)Executar servdior no locas host 127.0.01 com Username root porta 1026
+sem senha padrao
+
+4-) Antes de clicar na seta verde para entrar no diretório definido , defina o seu diretório no meu caso esta em "C:/Users/ernan/Downloads"
+
+Execute o cliente python Cliente.pyw
